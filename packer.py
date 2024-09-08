@@ -35,7 +35,7 @@ def packer():
     with zipfile.ZipFile('./output/' + category + '.zip', 'w') as zipf:
         for image in images:
             zipf.write(os.path.join('./emojis', image), image)
-        zipf.write('./output/meta.json')
+        zipf.write('./output/meta.json', 'meta.json')
     keepmeta = input("Do you want to keep the meta.json file? (Y/n): ")
     if keepmeta.lower() != 'y' and keepmeta.lower() != 'yes' and keepmeta.lower() != 'true' and keepmeta.lower() != '1' and keepmeta.lower() != '':
         os.remove('./output/meta.json')
